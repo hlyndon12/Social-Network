@@ -25,7 +25,7 @@ def register(request):
             user = User.objects.create_user(username=username, password= password1, email=email, first_name= first_name, last_name= last_name)
             user.save()
             print (user)     
-        return redirect(request,'login')
+        return redirect('login')
 
     else:
         return render(request,'accounts/register.html')
@@ -42,7 +42,7 @@ def login(request):
             return redirect('/')
         else:
             messages.info(request,'Invalid Credentials')
-            return redirect(request,'login')
+            return redirect('login')
     else:
         return render(request,'accounts/login.html')
 
