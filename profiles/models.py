@@ -51,7 +51,7 @@ class Profile(models.Model):
     bio = models.TextField(default="no bio...", max_length=300)
     email = models.EmailField(max_length=200, blank=True)
     country = models.CharField(max_length=200, blank=True)
-    avatar = OptimizedImageField(default='avatar.png',optimized_image_output_size=(400, 400),optimized_image_resize_method='thumbnail' ,upload_to='avatars/')
+    avatar = OptimizedImageField(default='avatar.png',optimized_image_output_size=(500, 500),optimized_image_resize_method='thumbnail' ,upload_to='avatars/')
     friends = models.ManyToManyField(User, blank=True, related_name='friends')
     slug = models.SlugField(unique=True, blank=True)
     updated = models.DateTimeField(auto_now=True)
